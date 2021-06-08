@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+
+<html lang="pl">
+
+<head>
+
+<meta charset="utf-8"/>
+<title>EuroPanele</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<link rel="stylesheet" href="style.css" type="text/css"/>
+
+
+
+<script>
+function test()
+{
+document.getElementById("wynik").innerHTML="to jest dobre";
+}
+</script>
+
+<script>
+function cena()
+
+{
+            var area = document.getElementById("area").value;
+            var standard = document.getElementById("standard"); 
+			var premium = document.getElementById("premium");
+			var price = "";
+
+
+           
+                if (standard.checked == true)
+				{
+                    
+					if (area.trim() === "") document.getElementById("wynik").innerHTML="Wpisz coś!"
+					else if (isNaN(area)) document.getElementById("wynik").innerHTML="To nie jest liczba!"
+					else
+					{
+					price = 400 * area;
+                   document.getElementById("wynik").innerHTML= price;
+				   }
+                }
+				else if (premium.checked == true)
+				{
+				if (area.trim() === "") document.getElementById("wynik").innerHTML="Wpisz coś!"
+					else if (isNaN(area)) document.getElementById("wynik").innerHTML="To nie jest liczba!"
+				else
+					{
+					price = 700 * area;
+                   document.getElementById("wynik").innerHTML= price ;
+				   }
+				}
+				else
+				{
+				document.getElementById("wynik").innerHTML="Wybierz jedną z opcji!"
+				}
+            }
+
+        </script>
+		
+		
+
+
+</head>
+
+<body>
+
+<header>
+
+<a href="index.html"><h1>Strona Główna</h1></a>
+
+</header>
+
+<main>
+<table>
+<tr>
+<td>
+Chcesz dowiedzieć się, ile w przybliżeniu będą kosztowały Cię panele?
+<br/><br/>
+Wpisz obszar swojego dachu i wybierz opcję - standard lub premium!
+</td>
+<td>
+<input type="text" id="area" /> m2
+<br/><br/>
+<input type="radio" name="opcja" id="standard" value="standard"> Standard
+<input type="radio" name="opcja" id="premium" value="premium"> Premium
+<br/><br/>
+<input type="submit" value="Liczymy" onclick="cena()" />
+<br/><br/>
+<div id="wynik"></div>
+</td>
+</tr>
+</table>
+
+</main>
+
+<aside>
+
+<table>
+
+<tr>
+
+<td class="benefit">
+
+<a href="benefit.html">Korzyści z Paneli Słonecznych</a>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td class="cena">
+
+<a href="cena.html">Chcesz kupić?</a>
+
+</td>
+
+</tr>
+
+
+
+</table>
+
+</aside>
+
+<footer class="footer">
+
+Stronę przygotowali Filip Litwin, Grzegorz Sędłak
+
+</footer>
+
+</body>
+
+</html>
